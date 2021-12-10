@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/FrutList/static/css/main.4a532b74.chunk.css",
-    "main.js": "/FrutList/static/js/main.2290b302.chunk.js",
-    "main.js.map": "/FrutList/static/js/main.2290b302.chunk.js.map",
+    "main.js": "/FrutList/static/js/main.a3637b10.chunk.js",
+    "main.js.map": "/FrutList/static/js/main.a3637b10.chunk.js.map",
     "runtime-main.js": "/FrutList/static/js/runtime-main.80a67fa8.js",
     "runtime-main.js.map": "/FrutList/static/js/runtime-main.80a67fa8.js.map",
     "static/js/2.cb76b845.chunk.js": "/FrutList/static/js/2.cb76b845.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.80a67fa8.js",
     "static/js/2.cb76b845.chunk.js",
     "static/css/main.4a532b74.chunk.css",
-    "static/js/main.2290b302.chunk.js"
+    "static/js/main.a3637b10.chunk.js"
   ]
 }
