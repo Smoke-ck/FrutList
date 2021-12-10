@@ -100,8 +100,8 @@ function App() {
           <Navigation />
         </div>
         <Routes>
-          <Route path="/" element={<List data={productsList} addItem={addItem} />} />
-          <Route path="/bascet" element={<BascetPage list={selectedProducts} deleteItem={deleteItem} itemAction={itemAction}
+          <Route path="FrutList/" element={<List data={productsList} addItem={addItem} />} />
+          <Route path="FrutList/bascet" element={<BascetPage list={selectedProducts} deleteItem={deleteItem} itemAction={itemAction}
           />} />
         </Routes>
       </div>
