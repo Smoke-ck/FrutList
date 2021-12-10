@@ -1,0 +1,15 @@
+.navigation {
+    display: flex;
+    &__item {
+        margin-right: 20px;
+        list-style-type: none;
+    }
+    &__link {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+    }
+}
+.active {
+    border-bottom: 2px solid orangered; 
+}

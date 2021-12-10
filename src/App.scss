@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1400px;
+  margin: 30px auto;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 5px 5px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+    &__menu {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      height: 150px;
+      background-image: url('https://p1.pxfuel.com/preview/317/161/237/apples-black-and-white-forbidden-fruit.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position:left;
+    }
+}
