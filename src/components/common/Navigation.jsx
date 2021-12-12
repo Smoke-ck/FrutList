@@ -7,10 +7,10 @@ function Navigation() {
         <>
             <ul className="navigation">
                 <li className="navigation__item">
-                    <NavLink to="FrutList//" className="navigation__link" activeClassName="navigation__active">Fruit</NavLink>
+                    <NavLink to="FrutList/" className="navigation__link" activeClassName="navigation__active">Fruit</NavLink>
                 </li>
                 <li className="navigation__item">
-                    <NavLink to="FrutList//bascet" className="navigation__link" activeClassName="navigation__active">Shopping cart</NavLink>
+                    <NavLink to="FrutList/bascet" className="navigation__link" activeClassName="navigation__active">Shopping cart</NavLink>
                 </li>
             </ul>
         </>

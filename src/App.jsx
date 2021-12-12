@@ -8,89 +8,51 @@ import { state } from "./state"
 
 function App() {
 
-  const [productsList, setProductsList] = useState([])
+  const [productsList, setProductsList] = useState(state)
   const [selectedProducts, setSelectedProducts] = useState([])
-
-  useEffect(() => {
-    setProductsList(state)
-  }, [])
 
   const addItem = (data) => {
     const products = [...selectedProducts];
-    const productsInStock = [...productsList]
     let condition = false;
 
-    productsInStock.map(el => el.id === data.id ? [el.inStock= true,el.count = 1,el.allPrice = el.price]: false)
-    setProductsList([...productsInStock])
+    setProductsList(prevState => prevState.map(el =>
+      el.id === data.id ? { ...el, inStock: true, count: 1, allPrice: el.price } : el))
 
-    products.map(el => {
-      if (el.id === data.id) {
-        condition = true;
-      }
-    });
-    if (condition) {
-      products.map(el => {
-        if (el.id === data.id) {
-          return el;
-        }
-      });
-    } else {
-      products.push(data);
-    }
-    return setSelectedProducts([...products])
+    products.map(el => el.id === data.id ? condition = true : false);
+    condition ? products.push(null) : products.push(data);
+    setSelectedProducts(products)
   };
 
   const deleteItem = id => {
-    const productsInStock = [...productsList]
-    productsInStock.map(el => el.id === id ? el.inStock = false : true)
-    setProductsList([...productsInStock])
-    setSelectedProducts(prevState => {
-      const state = prevState.filter((el) => {
-        return id !== el.id && el;
-      });
-      return state;
-    });
+    setProductsList(prevState => prevState.map(el => el.id === id ? { ...el, inStock: false } : el))
+    setSelectedProducts(prevState => prevState.filter(el => id !== el.id))
   }
 
   const itemAction = (id, type) => {
-    const products = [...selectedProducts]
-    products.map((el) => {
+    selectedProducts.map((el) => {
       if (id === el.id && type === 'increment') {
         el.count++;
-        incrementItemPrice(id)
+        countItemPrice(id, "+")
       }
       if (id === el.id && type === 'decrement') {
-        decrementItemPrice(id)
         el.count--;
-      }
-    });
-    return setSelectedProducts([...products])
-  }
-
-  const incrementItemPrice = (id) => {
-    const products = [...selectedProducts]
-    products.map((el) => {
-      if (el.id === id && id === 3 && el.count % 3 === 0) {
-        el.allPrice = el.allPrice + el.discount
-      }
-      else if (el.id === id) {
-        el.allPrice = el.allPrice + el.price
+        countItemPrice(id, '-')
       }
     })
-    return setSelectedProducts([...products])
   }
 
-  const decrementItemPrice = (id) => {
-    const products = [...selectedProducts]
+  const countItemPrice = (id, math) => {
+    const modifier = (math === '+' ? 1 : -1);
+    const products = [...selectedProducts];
     products.map((el) => {
-      if (el.id === id && id === 3 && el.count % 3 === 0) {
-        el.allPrice = el.allPrice - el.discount
+      if (el.id === id && el.discount && el.count % el.discountFromKg === 0) {
+        el.allPrice = el.allPrice * modifier + el.discount
       }
       else if (el.id === id) {
-        el.allPrice = el.allPrice - el.price
+        el.allPrice = el.allPrice + el.price * modifier
       }
     })
-    return setSelectedProducts([...products])
+    setSelectedProducts(products)
   }
 
   return (

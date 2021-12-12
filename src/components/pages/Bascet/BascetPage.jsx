@@ -8,7 +8,7 @@ function BascetPage({ list, deleteItem, itemAction }) {
     const allPrice = list.reduce((total, obj) => obj.allPrice + total, 0)
 
     let history = useNavigate();
-
+    
     const onBackClick = () => {
         history(-1);
     }
@@ -20,7 +20,7 @@ function BascetPage({ list, deleteItem, itemAction }) {
     return (
         <div className="bascet">
             <div className="bascet__cards">
-                {list.map(el => <BascetCard el={el} itemAction={itemAction} removeFromBascet={removeFromBascet} />)}
+                {list.map(el => <BascetCard key ={el.id} el={el} itemAction={itemAction} removeFromBascet={removeFromBascet} />)}
             </div>
             <p className="bascet__allPrice">Subtotal: {allPrice} $</p>
             <button onClick={onBackClick}

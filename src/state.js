@@ -23,6 +23,7 @@ export const state = [
       price: 10,
       count: 1,
       discount: 5,
+      discountFromKg: 3,
       allPrice: 10,
       img: "https://fruktlove.ru/wp-content/uploads/2018/08/papajja-formoza-1.jpg",
       inStock: false

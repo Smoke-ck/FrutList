@@ -7,12 +7,8 @@ function List({ data, addItem }) {
         <div className="cards">
             {data.map(el => < ListItem
                 key={el.id}
-                name={el.name}
-                price={el.price}
                 addItem={addItem}
                 element={el}
-                img={el.img}
-                id={el.id}
             />)}
         </div>
     )
