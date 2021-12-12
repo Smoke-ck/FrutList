@@ -18,7 +18,7 @@ function App() {
     setProductsList(prevState => prevState.map(el =>
       el.id === data.id ? { ...el, inStock: true, count: 1, allPrice: el.price } : el))
 
-    products.map(el => el.id === data.id ? condition = true : false);
+    products.find(el => el.id === data.id ? condition = true : false);
     condition ? products.push(null) : products.push(data);
     setSelectedProducts(products)
   };
